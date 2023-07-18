@@ -9,6 +9,8 @@ import HouseRenter from "../../Layouts/DashBoard/HouseRenter/HouseRenter";
 import RenterHome from "../../Layouts/DashBoard/HouseRenter/RenterHome/RenterHome";
 import LogIn from "../../Pages/LogIn/LogIn";
 import SignUp from "../../Pages/SignUp/SignUp";
+import IsHouseOwner from "../../Hooks/HouseOwner/IsHouseOwner";
+import IsHouseRenter from "../../Hooks/HouseRenter/IsHouseRenter";
 
 const router = createBrowserRouter([
   {
@@ -37,13 +39,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/dashboard/house-owner",
-        element: <OwnerHome />,
+        element: <IsHouseOwner><OwnerHome /></IsHouseOwner>
       },
     ],
   },
   {
     path: "/dashboard/house-renter",
-    element: <HouseRenter />,
+    element: <IsHouseRenter><HouseRenter /></IsHouseRenter>,
     errorElement: <AccessDenied />,
     children: [
       {
