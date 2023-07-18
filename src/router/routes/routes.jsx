@@ -7,6 +7,8 @@ import AccessDenied from "../../Pages/AccessDenied/AccessDenied";
 import OwnerHome from "../../Layouts/DashBoard/HouseOwner/OwnerHome/OwnerHome";
 import HouseRenter from "../../Layouts/DashBoard/HouseRenter/HouseRenter";
 import RenterHome from "../../Layouts/DashBoard/HouseRenter/RenterHome/RenterHome";
+import LogIn from "../../Pages/LogIn/LogIn";
+import SignUp from "../../Pages/SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -18,29 +20,37 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/login",
+        element: <LogIn />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
     ],
   },
   {
-    path: '/dashboard/house-owner',
+    path: "/dashboard/house-owner",
     element: <HouseOwner />,
     errorElement: <AccessDenied />,
     children: [
       {
-        path: '/dashboard/house-owner',
-        element:<OwnerHome/>
-      }
-    ]
+        path: "/dashboard/house-owner",
+        element: <OwnerHome />,
+      },
+    ],
   },
   {
-    path: '/dashboard/house-renter',
-    element:<HouseRenter/>,
+    path: "/dashboard/house-renter",
+    element: <HouseRenter />,
     errorElement: <AccessDenied />,
     children: [
       {
-        path: '/dashboard/house-renter',
-        element:<RenterHome/>
-      }
-    ]
-  }
+        path: "/dashboard/house-renter",
+        element: <RenterHome />,
+      },
+    ],
+  },
 ]);
 export default router;
