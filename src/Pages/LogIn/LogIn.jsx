@@ -36,7 +36,12 @@ const Login = () => {
       localStorage.setItem("user",(JSON.stringify(user)));
 
       toast.success("Logged In!");
-      navigate("/");
+      if (user?.role === "House Owner") {
+        navigate("/dashboard/house-owner")
+      }
+      else if(user?.role === "House Renter") {
+        navigate("/dashboard/house-renter")
+      }
     } catch (error) {
       setError("email", {
         type: "manual",

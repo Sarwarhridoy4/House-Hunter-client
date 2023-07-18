@@ -21,7 +21,7 @@ const SignUpPage = () => {
         },
         body: JSON.stringify(data),
       });
-
+      toast.success('SignUp Success! Log in Now!')
       navigate("/login");
     } catch (error) {
       toast.error(error?.message);
