@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
-    <div className="max-w-[1440px] mx-auto">
+    <div className="max-w-[1440px] mx-auto font-poppins">
       <Toaster/>
       <RouterProvider router={router}></RouterProvider>
   
